@@ -2,7 +2,7 @@
 
 Python SDK and MCP server for the [seeda.app](https://seeda.app) AI API — text-to-image, image-to-image, text-to-video, image-to-video, and music generation in one package.
 
-![Python](https://img.shields.io/badge/python-3.9%2B-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![CI](https://github.com/erozrobot/seedance-2.0-api/actions/workflows/ci.yml/badge.svg)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![CI](https://github.com/erozrobot/seedance-2.0-api/actions/workflows/ci.yml/badge.svg)
 
 ## Install
 
@@ -200,7 +200,7 @@ pytest tests/ -v
 ruff check seeda_sdk tests examples
 ```
 
-CI runs on Python 3.9, 3.10, 3.11, and 3.12 (see `.github/workflows/ci.yml`).
+CI runs on Python 3.10, 3.11, and 3.12 (see `.github/workflows/ci.yml`). The MCP extra requires Python ≥3.10 (upstream `fastmcp` constraint).
 
 ## License
 
