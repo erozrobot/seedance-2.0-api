@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "seeda-sdk"
+version = "0.1.0"
+description = "Python SDK and MCP server for the seeda.app AI API (text/image/video generation)."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [
+    { name = "erozrobot", email = "erozrobot@users.noreply.github.com" },
+]
+keywords = [
+    "seeda",
+    "seedance",
+    "ai",
+    "image-generation",
+    "video-generation",
+    "mcp",
+    "sdk",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+mcp = ["fastmcp>=0.2"]
+dev = [
+    "pytest>=7",
+    "ruff>=0.4",
+]
+
+[project.urls]
+Homepage = "https://seeda.app"
+Repository = "https://github.com/erozrobot/seedance-2.0-api"
+Issues = "https://github.com/erozrobot/seedance-2.0-api/issues"
+
+[project.scripts]
+seeda-mcp = "seeda_sdk.mcp_server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["seeda_sdk"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+ignore = ["E501"]
